@@ -37,17 +37,21 @@ export default function WelcomeScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      {/* App Header */}
+    <View style={styles.container}>
+      {/* Fixed App Header */}
       <View style={styles.appHeader}>
         <View style={styles.logoContainer}>
-          <Ionicons name="construct" size={40} color="#10B981" />
+          <Ionicons name="construct" size={28} color="#10B981" />
         </View>
-        <Text style={styles.appName}>ConsertaAí</Text>
-        <Text style={styles.appTagline}>Do descarte para o reparo</Text>
+        <View style={styles.headerTextContainer}>
+          <Text style={styles.appName}>ConsertaAí</Text>
+          <Text style={styles.appTagline}>Do descarte para o reparo</Text>
+        </View>
       </View>
 
-      {/* Hero Section */}
+      {/* Scrollable Content */}
+      <ScrollView style={styles.scrollContainer} contentContainerStyle={styles.contentContainer}>
+        {/* Hero Section */}
       <View style={styles.hero}>
         <Image
           source={{ uri: 'https://images.unsplash.com/photo-1721332154191-ba5f1534266e' }}
@@ -155,13 +159,14 @@ export default function WelcomeScreen() {
         <Text style={styles.loginButtonText}>Entrar com Google</Text>
         <Ionicons name="logo-google" size={20} color="#FFFFFF" style={styles.googleIcon} />
       </TouchableOpacity>
+      </ScrollView>
 
-      {/* Footer */}
+      {/* Fixed Footer */}
       <View style={styles.footer}>
         <Text style={styles.footerText}>Criado por Marlon Forti</Text>
         <Text style={styles.footerSubtext}>Com 💚 para um mundo mais sustentável</Text>
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
@@ -170,37 +175,49 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
-  contentContainer: {
-    paddingBottom: 32,
-  },
   appHeader: {
-    backgroundColor: '#FFFFFF',
-    paddingTop: 48,
-    paddingBottom: 24,
-    paddingHorizontal: 24,
+    flexDirection: 'row',
     alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
     borderBottomWidth: 1,
     borderBottomColor: '#E5E7EB',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3,
   },
   logoContainer: {
-    width: 64,
-    height: 64,
-    borderRadius: 32,
+    width: 44,
+    height: 44,
+    borderRadius: 22,
     backgroundColor: '#F0FDF4',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 12,
+    marginRight: 12,
+  },
+  headerTextContainer: {
+    flex: 1,
   },
   appName: {
-    fontSize: 32,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#10B981',
-    marginBottom: 4,
+    lineHeight: 24,
   },
   appTagline: {
-    fontSize: 14,
+    fontSize: 11,
     color: '#6B7280',
     fontStyle: 'italic',
+    lineHeight: 14,
+  },
+  scrollContainer: {
+    flex: 1,
+  },
+  contentContainer: {
+    paddingBottom: 16,
   },
   hero: {
     height: 400,
@@ -386,22 +403,26 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   footer: {
-    marginTop: 32,
-    paddingVertical: 24,
+    backgroundColor: '#FFFFFF',
+    paddingVertical: 16,
     paddingHorizontal: 24,
     alignItems: 'center',
     borderTopWidth: 1,
     borderTopColor: '#E5E7EB',
-    backgroundColor: '#F9FAFB',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 3,
+    elevation: 3,
   },
   footerText: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '600',
     color: '#1F2937',
-    marginBottom: 4,
+    marginBottom: 2,
   },
   footerSubtext: {
-    fontSize: 12,
+    fontSize: 11,
     color: '#6B7280',
   },
 });
