@@ -12,7 +12,8 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';\nimport axios from 'axios';
+import { Ionicons } from '@expo/vector-icons';
+import axios from 'axios';
 import Constants from 'expo-constants';
 import * as ImagePicker from 'expo-image-picker';
 import { useRouter } from 'expo-router';
@@ -106,7 +107,7 @@ export default function BecomeRepairerScreen() {
     >
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.content}>
         <View style={styles.header}>
-          <Ionicons name=\"construct\" size={48} color=\"#10B981\" />
+          <Ionicons name="construct" size={48} color="#10B981" />
           <Text style={styles.headerTitle}>Torne-se um Reparador</Text>
           <Text style={styles.headerSubtitle}>
             Compartilhe suas habilidades e ganhe renda extra ajudando a comunidade.
@@ -118,14 +119,14 @@ export default function BecomeRepairerScreen() {
           <View style={styles.skillInputContainer}>
             <TextInput
               style={styles.skillInput}
-              placeholder=\"Ex: Geladeira, Microondas...\"
+              placeholder="Ex: Geladeira, Microondas..."
               value={skillInput}
               onChangeText={setSkillInput}
               onSubmitEditing={addSkill}
-              returnKeyType=\"done\"
+              returnKeyType="done"
             />
             <TouchableOpacity style={styles.addButton} onPress={addSkill}>
-              <Ionicons name=\"add\" size={24} color=\"#FFFFFF\" />
+              <Ionicons name="add" size={24} color="#FFFFFF" />
             </TouchableOpacity>
           </View>
 
@@ -135,7 +136,7 @@ export default function BecomeRepairerScreen() {
                 <View key={index} style={styles.skillTag}>
                   <Text style={styles.skillTagText}>{skill}</Text>
                   <TouchableOpacity onPress={() => removeSkill(skill)}>
-                    <Ionicons name=\"close-circle\" size={20} color=\"#10B981\" />
+                    <Ionicons name="close-circle" size={20} color="#10B981" />
                   </TouchableOpacity>
                 </View>
               ))}
@@ -147,12 +148,12 @@ export default function BecomeRepairerScreen() {
           <Text style={styles.label}>Sobre Você</Text>
           <TextInput
             style={[styles.input, styles.textArea]}
-            placeholder=\"Conte um pouco sobre sua experiência...\"
+            placeholder="Conte um pouco sobre sua experiência..."
             value={bio}
             onChangeText={setBio}
             multiline
             numberOfLines={4}
-            textAlignVertical=\"top\"
+            textAlignVertical="top"
           />
         </View>
 
@@ -160,10 +161,10 @@ export default function BecomeRepairerScreen() {
           <Text style={styles.label}>Valor por Hora (R$)</Text>
           <TextInput
             style={styles.input}
-            placeholder=\"Ex: 50.00\"
+            placeholder="Ex: 50.00"
             value={hourlyRate}
             onChangeText={setHourlyRate}
-            keyboardType=\"decimal-pad\"
+            keyboardType="decimal-pad"
           />
         </View>
 
@@ -173,7 +174,7 @@ export default function BecomeRepairerScreen() {
             Adicione fotos suas trabalhando ou de ferramentas
           </Text>
           <TouchableOpacity style={styles.photoButton} onPress={pickImage}>
-            <Ionicons name=\"images\" size={24} color=\"#10B981\" />
+            <Ionicons name="images" size={24} color="#10B981" />
             <Text style={styles.photoButtonText}>Adicionar Fotos</Text>
           </TouchableOpacity>
 
@@ -186,7 +187,7 @@ export default function BecomeRepairerScreen() {
                     style={styles.removePhotoButton}
                     onPress={() => removePhoto(index)}
                   >
-                    <Ionicons name=\"close-circle\" size={24} color=\"#EF4444\" />
+                    <Ionicons name="close-circle" size={24} color="#EF4444" />
                   </TouchableOpacity>
                 </View>
               ))}
@@ -200,7 +201,7 @@ export default function BecomeRepairerScreen() {
           disabled={loading}
         >
           {loading ? (
-            <ActivityIndicator size=\"small\" color=\"#FFFFFF\" />
+            <ActivityIndicator size="small" color="#FFFFFF" />
           ) : (
             <Text style={styles.submitButtonText}>Criar Perfil de Reparador</Text>
           )}

@@ -90,7 +90,14 @@ export default function HomeScreen() {
     loadRepairers();
   };
 
-  const categories = [\n    { name: 'Geladeira', icon: 'snow' },\n    { name: 'Microondas', icon: 'radio' },\n    { name: 'Máquina de Lavar', icon: 'water' },\n    { name: 'TV', icon: 'tv' },\n    { name: 'Ar Condicionado', icon: 'thermometer' },\n    { name: 'Fogão', icon: 'flame' },\n  ];
+  const categories = [
+    { name: 'Geladeira', icon: 'snow' },
+    { name: 'Microondas', icon: 'radio' },
+    { name: 'Máquina de Lavar', icon: 'water' },
+    { name: 'TV', icon: 'tv' },
+    { name: 'Ar Condicionado', icon: 'thermometer' },
+    { name: 'Fogão', icon: 'flame' },
+  ];
 
   return (
     <View style={styles.container}>

@@ -161,7 +161,7 @@ export default function ChatScreen() {
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size=\"large\" color=\"#10B981\" />
+        <ActivityIndicator size="large" color="#10B981" />
       </View>
     );
   }
@@ -184,7 +184,7 @@ export default function ChatScreen() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder=\"Digite sua mensagem...\"
+          placeholder="Digite sua mensagem..."
           value={newMessage}
           onChangeText={setNewMessage}
           multiline
@@ -196,9 +196,9 @@ export default function ChatScreen() {
           disabled={!newMessage.trim() || sending}
         >
           {sending ? (
-            <ActivityIndicator size=\"small\" color=\"#FFFFFF\" />
+            <ActivityIndicator size="small" color="#FFFFFF" />
           ) : (
-            <Ionicons name=\"send\" size={24} color=\"#FFFFFF\" />
+            <Ionicons name="send" size={24} color="#FFFFFF" />
           )}
         </TouchableOpacity>
       </View>
