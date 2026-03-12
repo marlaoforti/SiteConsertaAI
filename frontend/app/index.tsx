@@ -29,11 +29,11 @@ export default function WelcomeScreen() {
 
   const handleLogin = () => {
     // REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH
-    const redirectUrl = `${BACKEND_URL}/auth-callback`;
-    const authUrl = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
-    
-    // For Expo, we'll handle this in the app navigation
-    router.push('/auth-callback');
+    if (typeof window !== 'undefined') {
+      const redirectUrl = window.location.origin + '/auth-callback';
+      const authUrl = `https://auth.emergentagent.com/?redirect=${encodeURIComponent(redirectUrl)}`;
+      window.location.href = authUrl;
+    }
   };
 
   return (
