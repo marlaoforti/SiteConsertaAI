@@ -22,6 +22,7 @@ export default function TabsLayout() {
         headerTintColor: '#FFFFFF',
         headerTitleStyle: {
           fontWeight: 'bold',
+          fontSize: 18,
         },
       }}
     >
@@ -29,6 +30,7 @@ export default function TabsLayout() {
         name="home"
         options={{
           title: 'Início',
+          headerTitle: 'ConsertaAí',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
           ),
@@ -38,6 +40,7 @@ export default function TabsLayout() {
         name="requests"
         options={{
           title: 'Solicitações',
+          headerTitle: 'ConsertaAí',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="list" size={size} color={color} />
           ),
@@ -47,6 +50,7 @@ export default function TabsLayout() {
         name="chats"
         options={{
           title: 'Conversas',
+          headerTitle: 'ConsertaAí',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="chatbubbles" size={size} color={color} />
           ),
@@ -56,6 +60,7 @@ export default function TabsLayout() {
         name="profile"
         options={{
           title: 'Perfil',
+          headerTitle: 'ConsertaAí',
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person" size={size} color={color} />
           ),

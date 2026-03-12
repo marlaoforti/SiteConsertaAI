@@ -38,6 +38,15 @@ export default function WelcomeScreen() {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      {/* App Header */}
+      <View style={styles.appHeader}>
+        <View style={styles.logoContainer}>
+          <Ionicons name="construct" size={40} color="#10B981" />
+        </View>
+        <Text style={styles.appName}>ConsertaAí</Text>
+        <Text style={styles.appTagline}>Do descarte para o reparo</Text>
+      </View>
+
       {/* Hero Section */}
       <View style={styles.hero}>
         <Image
@@ -163,6 +172,35 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     paddingBottom: 32,
+  },
+  appHeader: {
+    backgroundColor: '#FFFFFF',
+    paddingTop: 48,
+    paddingBottom: 24,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+  },
+  logoContainer: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: '#F0FDF4',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  appName: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#10B981',
+    marginBottom: 4,
+  },
+  appTagline: {
+    fontSize: 14,
+    color: '#6B7280',
+    fontStyle: 'italic',
   },
   hero: {
     height: 400,
